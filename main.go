@@ -8,20 +8,30 @@ import (
 )
 
 func main() {
-	abc := gomail.NewMessage()
+	send := gomail.NewMessage()
 
-	abc.SetHeader("From", "ajengnikita14@gmail.com")
-	abc.SetHeader("To", "ajengnktaa15@gmail.com")
-	abc.SetHeader("Subject", "HAI INI ADA YANG BARU")
-	abc.SetBody("text/plain", "THIS IS BODY")
+	send.SetHeader("From", "ajengnikita14@gmail.com")
+	send.SetHeader("To", "ajengnktaa15@gmail.com")
+	send.SetHeader("Subject", "HAI KAMU")
+	send.SetBody("text/plain", "THIS IS BODY jbajbancahieaknab jbjaja")
 
 	a := gomail.NewDialer("smtp.gmail.com", 587, "ajengnikita14@gmail.com", "fird jdwa rujm xlyq")
-
-	if err := a.DialAndSend(abc); err != nil {
+	fmt.Println("Sudah Terkirim!")
+	if err := a.DialAndSend(send); err != nil {
+		
 		fmt.Println(err)
 		panic(err)
 	}
 }
+
+
+
+
+
+
+
+
+
 
 // func sendMailSimple() {
 // 	auth := smtp.PlainAuth(
